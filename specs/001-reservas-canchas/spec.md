@@ -8,6 +8,12 @@
 
 **Input**: User description: "Sistema de reservas de padel con autenticacion, exploracion de disponibilidad, creacion y gestion de reservas"
 
+## Clarifications
+
+### Session 2026-09-11
+
+- Q: ¿Qué zona horaria debe usar el sistema para determinar si una fecha u horario ya pasó? → A: `America/Bogota`, la zona horaria del club.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Crear cuenta e iniciar sesion (Priority: P1)
@@ -197,7 +203,7 @@ identifica cancha, fecha y hora, y cancela una reserva futura confirmando la acc
 
 ## Assumptions
 
-- La zona horaria del club es la referencia para determinar fechas y horarios pasados.
+- `America/Bogota` es la zona horaria del club y la referencia para determinar fechas y horarios pasados.
 - Una reserva activa es una reserva futura que no ha sido cancelada; al pasar su hora,
   forma parte del historial y deja de contar para el limite de una reserva activa.
 - El correo electronico funciona como identificador unico de cuenta.
