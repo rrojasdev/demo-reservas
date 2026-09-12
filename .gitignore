@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.env*
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+db/padel.db
+*.db-shm
+*.db-wal
+*.tmp
+*.swp

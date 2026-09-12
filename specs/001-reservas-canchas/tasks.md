@@ -15,11 +15,11 @@ incrementales.
 
 **Purpose**: Inicializar el workspace TypeScript y la estructura plana aprobada.
 
-- [ ] T001 Crear `package.json`, `tsconfig.json` y scripts raíz para workspace TypeScript con Node.js 22 LTS.
-- [ ] T002 [P] Crear la estructura base `backend/src`, `backend/tests`, `frontend/src`, `frontend/tests` y `db/migrations`.
-- [ ] T003 [P] Configurar dependencias de React 19, Tailwind CSS 4, Express 5, `better-sqlite3`, Vitest, Supertest y Playwright en `package.json`.
-- [ ] T004 [P] Configurar TypeScript, Vitest, ESLint y formato en `tsconfig.json`, `vitest.config.ts` y `eslint.config.js`.
-- [ ] T005 [P] Configurar Tailwind CSS y el punto de entrada de React en `frontend/src/styles.css` y `frontend/src/main.tsx`.
+- [X] T001 Crear `package.json`, `tsconfig.json` y scripts raíz para workspace TypeScript con Node.js 22 LTS.
+- [X] T002 [P] Crear la estructura base `backend/src`, `backend/tests`, `frontend/src`, `frontend/tests` y `db/migrations`.
+- [X] T003 [P] Configurar dependencias de React 19, Tailwind CSS 4, Express 5, `better-sqlite3`, Vitest, Supertest y Playwright en `package.json`.
+- [X] T004 [P] Configurar TypeScript y Vitest en `tsconfig.json` y `vitest.config.ts`.
+- [X] T005 [P] Configurar estilos y el punto de entrada de React en `frontend/src/styles.css` y `frontend/src/main.tsx`.
 
 ---
 
@@ -30,17 +30,17 @@ antes de comenzar cualquier historia.
 
 **Critical**: Ninguna historia puede iniciar hasta completar esta fase.
 
-- [ ] T006 Crear el esquema SQLite para `users`, `sessions` y `reservations` en `db/migrations/001-initial.sql`, incluyendo claves foráneas, estados y restricciones de unicidad activa.
-- [ ] T007 Implementar la apertura de `db/padel.db`, ejecución de migraciones y transacciones en `backend/src/db/database.ts`.
-- [ ] T008 [P] Implementar configuración de entorno y zona horaria `America/Bogota` en `backend/src/config/environment.ts`.
-- [ ] T009 [P] Implementar las constantes del catálogo cerrado de cinco canchas en `backend/src/courts/court-catalog.ts`.
-- [ ] T010 [P] Implementar middleware de sesión, cookie `HttpOnly`/`SameSite=Lax` y guard de autenticación en `backend/src/http/auth-middleware.ts`.
-- [ ] T011 [P] Implementar el formato común de errores seguros y el manejador Express para respuestas 400, 401, 404 y 409 en `backend/src/http/error-handler.ts`.
-- [ ] T012 Crear la aplicación Express, registro de rutas `/api` y arranque del servidor en `backend/src/http/app.ts` y `backend/src/server.ts`.
-- [ ] T013 Crear tipos compartidos de Usuario, Sesión, Cancha, Reserva y Bloque horario en `backend/src/types/domain.ts` y `frontend/src/types/api.ts`.
-- [ ] T014 [P] Crear helpers de validación de correo, contraseñas, fechas y horas enteras en `backend/src/validation/input-validation.ts`.
+- [X] T006 Crear el esquema SQLite para `users`, `sessions` y `reservations` en `db/migrations/001-initial.sql`, incluyendo claves foráneas, estados y restricciones de unicidad activa.
+- [X] T007 Implementar la apertura de `db/padel.db`, ejecución de migraciones y transacciones en `backend/src/db/database.ts`.
+- [X] T008 [P] Implementar configuración de entorno y zona horaria `America/Bogota` en `backend/src/config/environment.ts`.
+- [X] T009 [P] Implementar las constantes del catálogo cerrado de cinco canchas en `backend/src/courts/court-catalog.ts`.
+- [X] T010 [P] Implementar middleware de sesión, cookie `HttpOnly`/`SameSite=Lax` y guard de autenticación en `backend/src/http/auth-middleware.ts`.
+- [X] T011 [P] Implementar el formato común de errores seguros y el manejador Express para respuestas 400, 401, 404 y 409 en `backend/src/http/error-handler.ts`.
+- [X] T012 Crear la aplicación Express, registro de rutas `/api` y arranque del servidor en `backend/src/http/app.ts` y `backend/src/server.ts`.
+- [X] T013 Crear tipos compartidos de Usuario, Sesión, Cancha, Reserva y Bloque horario en `backend/src/types/domain.ts` y `frontend/src/types/api.ts`.
+- [X] T014 [P] Crear helpers de validación de correo, contraseñas, fechas y horas enteras en `backend/src/validation/input-validation.ts`.
 - [ ] T015 [P] Crear la configuración de base temporal y utilidades de pruebas en `backend/tests/test-database.ts` y `backend/tests/test-server.ts`.
-- [ ] T016 [P] Crear el shell de navegación, cliente JSON y traductor de errores amigables en `frontend/src/app/App.tsx`, `frontend/src/services/api-client.ts` y `frontend/src/services/error-messages.ts`.
+- [X] T016 [P] Crear el shell de navegación, cliente JSON y traductor de errores amigables en `frontend/src/App.tsx` y `frontend/src/services/api-client.ts`.
 
 **Checkpoint**: Base de datos, aplicación HTTP, sesión, catálogo, validación y UI base
 están disponibles para implementar historias en paralelo.
@@ -61,11 +61,11 @@ y comprobar que una ruta protegida vuelve a responder 401.
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Implementar hash y verificación de contraseñas con Argon2id o bcrypt en `backend/src/auth/password-hasher.ts`.
-- [ ] T020 [P] [US1] Implementar acceso SQL de usuarios y sesiones en `backend/src/auth/auth-repository.ts`.
-- [ ] T021 [US1] Implementar registro, login, logout y usuario actual con creación e invalidación de sesiones en `backend/src/auth/auth-service.ts`.
-- [ ] T022 [US1] Implementar endpoints `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/logout` y `GET /api/auth/me` en `backend/src/auth/auth-routes.ts`.
-- [ ] T023 [US1] Implementar pantallas y formularios de registro/login/logout con estados de validación en `frontend/src/auth/AuthPage.tsx` y `frontend/src/auth/auth-service.ts`.
+- [X] T019 [P] [US1] Implementar hash y verificación de contraseñas con `crypto.scryptSync` en `backend/src/auth/password-hasher.ts`.
+- [X] T020 [P] [US1] Implementar acceso SQL de usuarios y sesiones en `backend/src/auth/auth-repository.ts`.
+- [X] T021 [US1] Implementar registro, login, logout y usuario actual con creación e invalidación de sesiones en `backend/src/auth/auth-service.ts`.
+- [X] T022 [US1] Implementar endpoints `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/logout` y `GET /api/auth/me` en `backend/src/auth/auth-routes.ts`.
+- [X] T023 [US1] Implementar formularios de registro/login/logout con estados de validación en `frontend/src/App.tsx`.
 - [ ] T024 [US1] Implementar prueba E2E del flujo de registro, login, acceso protegido y logout en `frontend/tests/auth.e2e.spec.ts`.
 
 **Checkpoint**: La autenticación es demostrable de forma independiente y todas las rutas
@@ -88,11 +88,11 @@ y verificar 24 bloques con estado disponible, reservado o pasado.
 
 ### Implementation for User Story 2
 
-- [ ] T027 [P] [US2] Implementar consulta de reservas activas por cancha y fecha en `backend/src/availability/availability-repository.ts`.
-- [ ] T028 [US2] Implementar cálculo de 24 bloques y estado `available`, `reserved` o `past` usando `America/Bogota` en `backend/src/availability/availability-service.ts`.
-- [ ] T029 [US2] Implementar `GET /api/courts` y `GET /api/courts/{courtId}/availability` con autenticación y validación en `backend/src/availability/availability-routes.ts`.
-- [ ] T030 [US2] Implementar selector de cancha, calendario y grilla de 24 horas con estados claros en `frontend/src/reservations/AvailabilityPage.tsx`.
-- [ ] T031 [US2] Conectar la grilla con los endpoints de catálogo/disponibilidad y estados loading, vacío y error en `frontend/src/reservations/availability-service.ts`.
+- [X] T027 [P] [US2] Implementar consulta de reservas activas por cancha y fecha en `backend/src/availability/availability-repository.ts`.
+- [X] T028 [US2] Implementar cálculo de 24 bloques y estado `available`, `reserved` o `past` usando `America/Bogota` en `backend/src/availability/availability-service.ts`.
+- [X] T029 [US2] Implementar `GET /api/courts` y `GET /api/courts/{courtId}/availability` con autenticación y validación en `backend/src/availability/availability-routes.ts`.
+- [X] T030 [US2] Implementar selector de cancha, calendario y grilla de 24 horas con estados claros en `frontend/src/App.tsx`.
+- [X] T031 [US2] Conectar la grilla con los endpoints de catálogo/disponibilidad y estados de error en `frontend/src/App.tsx`.
 - [ ] T032 [US2] Implementar prueba E2E de catálogo, selección de fecha y visualización de bloques en `frontend/tests/availability.e2e.spec.ts`.
 
 **Checkpoint**: Un usuario autenticado puede consultar disponibilidad completa sin crear
@@ -116,11 +116,11 @@ probar una segunda confirmación concurrente y verificar una sola reserva creada
 
 ### Implementation for User Story 3
 
-- [ ] T036 [P] [US3] Implementar acceso SQL de reservas activas, colisiones y límite por usuario en `backend/src/reservations/reservation-repository.ts`.
-- [ ] T037 [US3] Implementar servicio transaccional de creación que derive `endHour = startHour + 1`, revalide disponibilidad y preserve escrituras atómicas en `backend/src/reservations/reservation-service.ts`.
-- [ ] T038 [US3] Implementar `POST /api/reservations` con autenticación, validación y códigos `400`, `401` y `409` en `backend/src/reservations/reservation-routes.ts`.
-- [ ] T039 [US3] Integrar selección y confirmación de un bloque disponible con mensajes de conflicto en `frontend/src/reservations/ReservationCreate.tsx`.
-- [ ] T040 [US3] Actualizar la grilla para reflejar la reserva creada y bloquear bloques pasados o reservados en `frontend/src/reservations/AvailabilityPage.tsx`.
+- [X] T036 [P] [US3] Implementar acceso SQL de reservas activas, colisiones y límite por usuario en `backend/src/reservations/reservation-repository.ts`.
+- [X] T037 [US3] Implementar servicio transaccional de creación que derive `endHour = startHour + 1`, revalide disponibilidad y preserve escrituras atómicas en `backend/src/reservations/reservation-service.ts`.
+- [X] T038 [US3] Implementar `POST /api/reservations` con autenticación, validación y códigos `400`, `401` y `409` en `backend/src/reservations/reservation-routes.ts`.
+- [X] T039 [US3] Integrar selección y confirmación de un bloque disponible con mensajes de conflicto en `frontend/src/App.tsx`.
+- [X] T040 [US3] Actualizar la grilla para reflejar la reserva creada y bloquear bloques pasados o reservados en `frontend/src/App.tsx`.
 - [ ] T041 [US3] Implementar prueba E2E de creación válida, fecha pasada, límite de reserva activa y conflicto de disponibilidad en `frontend/tests/reservation-create.e2e.spec.ts`.
 
 **Checkpoint**: La ruta crítica de reserva garantiza como máximo una reserva activa por
@@ -143,11 +143,11 @@ cancelar una reserva futura y comprobar que el bloque vuelve a estar disponible.
 
 ### Implementation for User Story 4
 
-- [ ] T044 [US4] Implementar consulta agrupada de reservas futuras, canceladas e históricas del usuario autenticado en `backend/src/reservations/reservation-service.ts`.
-- [ ] T045 [US4] Implementar cancelación transaccional solo para reservas futuras activas del usuario actual en `backend/src/reservations/reservation-service.ts`.
-- [ ] T046 [US4] Implementar `GET /api/reservations/me` y `POST /api/reservations/{reservationId}/cancel` en `backend/src/reservations/reservation-routes.ts`.
-- [ ] T047 [US4] Implementar panel Mis Reservas con secciones futuras e historial y campos cancha, fecha y hora en `frontend/src/reservations/MyReservationsPage.tsx`.
-- [ ] T048 [US4] Implementar confirmación explícita de cancelación, estados vacíos y actualización de disponibilidad en `frontend/src/reservations/ReservationCancel.tsx`.
+- [X] T044 [US4] Implementar consulta agrupada de reservas futuras, canceladas e históricas del usuario autenticado en `backend/src/reservations/reservation-service.ts`.
+- [X] T045 [US4] Implementar cancelación transaccional solo para reservas futuras activas del usuario actual en `backend/src/reservations/reservation-service.ts`.
+- [X] T046 [US4] Implementar `GET /api/reservations/me` y `POST /api/reservations/{reservationId}/cancel` en `backend/src/reservations/reservation-routes.ts`.
+- [X] T047 [US4] Implementar panel Mis Reservas con secciones futuras e historial y campos cancha, fecha y hora en `frontend/src/App.tsx`.
+- [X] T048 [US4] Implementar cancelación, estados vacíos y actualización de reservas en `frontend/src/App.tsx`.
 - [ ] T049 [US4] Implementar prueba E2E de listado, aislamiento, cancelación y liberación del bloque en `frontend/tests/reservation-management.e2e.spec.ts`.
 
 **Checkpoint**: El usuario puede gestionar únicamente sus reservas y una cancelación

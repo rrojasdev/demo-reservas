@@ -1,0 +1,37 @@
+{
+  "name": "padel-reservas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx backend/src/server.ts",
+    "dev:frontend": "vite --host 0.0.0.0",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:contract": "vitest run backend/tests/contract",
+    "test:e2e": "playwright test",
+    "db:migrate": "tsx backend/src/db/migrate.ts"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@types/supertest": "^7.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "supertest": "^7.2.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.2.4"
+  }
+}
