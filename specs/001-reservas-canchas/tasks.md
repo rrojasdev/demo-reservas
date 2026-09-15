@@ -241,3 +241,30 @@ Task: T036 Reservation repository in backend/src/reservations/reservation-reposi
 - Las historias tienen criterios de prueba independientes y trazabilidad a los requisitos del spec.
 - Las tareas no incluyen pagos, administración de canchas, notificaciones externas,
   reservas multi-hora en un clic ni matchmaking.
+
+## Phase 8: Convergence
+
+**Purpose**: Cerrar las brechas detectadas entre la implementación actual y la
+especificación, el plan y las tareas existentes.
+
+- [ ] T056 [P] Crear utilidades de base temporal y servidor de pruebas en `backend/tests/test-database.ts` y `backend/tests/test-server.ts` según T015 (missing).
+- [ ] T057 [P] [US1] Completar pruebas de contrato para registro, login, logout y `/me` en `backend/tests/contract/auth.contract.test.ts` según US1/AC1-AC4 (missing).
+- [ ] T058 [P] [US1] Crear pruebas de integración para credenciales inválidas, correo duplicado y rutas protegidas en `backend/tests/integration/auth.integration.test.ts` según US1/AC3-AC4 (missing).
+- [ ] T059 [US1] Crear prueba E2E de registro, login, acceso protegido y logout en `frontend/tests/auth.e2e.spec.ts` según US1/Independent Test (missing).
+- [ ] T060 [P] [US2] Crear pruebas de contrato para catálogo y disponibilidad en `backend/tests/contract/availability.contract.test.ts` según FR-005-FR-007 (missing).
+- [ ] T061 [P] [US2] Crear pruebas de integración para catálogo cerrado, fecha inválida, bloques pasados y acceso sin sesión en `backend/tests/integration/availability.integration.test.ts` según US2/AC1-AC4 (missing).
+- [ ] T062 [US2] Crear prueba E2E de catálogo, selección de fecha y grilla de 24 bloques en `frontend/tests/availability.e2e.spec.ts` según US2/Independent Test (missing).
+- [ ] T063 [P] [US3] Crear pruebas unitarias de validación de fecha, hora entera, duración y `America/Bogota` en `backend/tests/unit/reservation-validation.test.ts` según FR-008 y FR-011 (missing).
+- [ ] T064 [P] [US3] Crear pruebas de contrato para creación de reserva y respuestas 400, 401 y 409 en `backend/tests/contract/reservation-create.contract.test.ts` según FR-008-FR-010 (missing).
+- [ ] T065 [P] [US3] Crear prueba de concurrencia para el mismo bloque y verificar una sola reserva confirmada en `backend/tests/integration/reservation-concurrency.integration.test.ts` según FR-009 y SC-003 (missing).
+- [ ] T066 [US3] Crear prueba E2E de reserva válida, bloque pasado, límite activo y conflicto en `frontend/tests/reservation-create.e2e.spec.ts` según US3/AC1-AC4 (missing).
+- [ ] T067 [US4] Añadir confirmación explícita antes de cancelar una reserva futura en `frontend/src/App.tsx` según FR-014 y US4/AC3 (partial).
+- [ ] T068 [P] [US4] Crear pruebas de contrato para listado y cancelación en `backend/tests/contract/reservation-management.contract.test.ts` según FR-012-FR-014 (missing).
+- [ ] T069 [P] [US4] Crear pruebas de integración para aislamiento, cancelación propia, reserva pasada y cancelación repetida en `backend/tests/integration/reservation-management.integration.test.ts` según US4/AC1-AC4 (missing).
+- [ ] T070 [US4] Crear prueba E2E de listado, aislamiento, cancelación y liberación del bloque en `frontend/tests/reservation-management.e2e.spec.ts` según US4/Independent Test (missing).
+- [ ] T071 [P] Añadir pruebas de traducción de errores y ausencia de stack traces en `frontend/tests/error-messages.test.ts` según SC-008 y Constitution IV (missing).
+- [ ] T072 [P] Añadir comprobaciones de accesibilidad para formularios, calendario, grilla y estados en `frontend/src/components/Accessibility.tsx` y componentes relacionados según la calidad del flujo (missing).
+- [ ] T073 [P] Implementar logging seguro sin credenciales ni contraseñas en `backend/src/http/logger.ts` según el plan y Constitution IV (missing).
+- [ ] T074 Crear prueba de rendimiento p95 menor de 500 ms para disponibilidad y reserva en `backend/tests/performance/reservation-performance.test.ts` según plan: Performance Goals (missing).
+- [ ] T075 Ejecutar los escenarios de `specs/001-reservas-canchas/quickstart.md` y registrar resultados en `specs/001-reservas-canchas/validation-results.md` según SC-001-SC-008 (missing).
+- [ ] T076 Revisar trazabilidad FR-001 a FR-016, non-goals y cumplimiento constitucional en `specs/001-reservas-canchas/plan.md` y la revisión final según T055 (missing).
