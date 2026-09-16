@@ -55,7 +55,18 @@
 - **Alternatives considered**: GraphQL (innecesario para este alcance), respuestas de
   error sin estructura (dificultan pruebas y traduccion consistente).
 
-## Decision 6: Estrategia de pruebas por capas
+## Decision 6: Ventana operativa de la grilla
+
+- **Decision**: Mostrar solo bloques disponibles dentro del rango de 07:00 AM a 10:00
+  PM, y excluir completamente el intervalo de 10:00 PM a 06:00 AM de la grilla.
+- **Rationale**: La regla del negocio exige que la disponibilidad no presente horarios
+  nocturnos y evita reservar turnos fuera del horario operativo del club. La validacion
+  se aplica tanto en la consulta como en la confirmacion de una reserva.
+- **Alternatives considered**: Mostrar una grilla completa con horarios de madrugada y
+  bloquearlos al confirmar (genera confusion y un patron inconsistente para el usuario),
+  permitir horarios nocturnos sin restricciones (contradice la decision de negocio).
+
+## Decision 7: Estrategia de pruebas por capas
 
 - **Decision**: Probar reglas puras con Vitest, endpoints con Supertest y flujos
   autenticados con Playwright. La prueba critica ejecutara dos confirmaciones

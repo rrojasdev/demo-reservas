@@ -31,8 +31,9 @@ validacion.
 2. Registrar dos usuarios con correos distintos e iniciar sesion con ambos en contextos
    separados.
 3. Confirmar que el catalogo contiene exactamente las cinco canchas documentadas.
-4. Para Cancha Laureles, seleccionar una fecha futura en `America/Bogota` y verificar 24
-   bloques de una hora con estados claros.
+4. Para Cancha Laureles, seleccionar una fecha futura en `America/Bogota` y verificar
+   solo los bloques operativos entre 07:00 AM y 10:00 PM con estados claros; confirmar
+   que el rango de 10:00 PM a 06:00 AM no aparece como disponible.
 5. Con el primer usuario, reservar el bloque futuro 14:00-15:00 y comprobar que aparece
    en Mis Reservas.
 6. Con el segundo usuario, consultar la misma fecha y verificar que el bloque aparece

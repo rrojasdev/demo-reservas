@@ -12,7 +12,8 @@ Entregar autenticacion por correo y contraseña, consulta autenticada de disponi
 para las cinco canchas, reservas de bloques de una hora y gestion de reservas propias.
 La aplicacion usara React, Express y SQLite local. La reserva se confirmara dentro de
 una transaccion que valide nuevamente la disponibilidad y el limite de una reserva
-activa antes de persistirla.
+activa antes de persistirla. La grilla de disponibilidad se limitará estrictamente al
+rango de 07:00 AM a 10:00 PM, sin mostrar horarios entre las 10:00 PM y las 06:00 AM.
 
 ## Technical Context
 
@@ -41,8 +42,10 @@ de 500 ms en el entorno local de validacion; la grilla debe mostrarse en menos d
 de interaccion del usuario.
 
 **Constraints**: Zona horaria `America/Bogota`; cinco canchas inmutables; bloques de una
-hora; una reserva activa por usuario; sin pagos, notificaciones externas ni panel de
-administracion; errores tecnicos nunca llegan a la UI.
+hora; una reserva activa por usuario; horario operativo restringido a 07:00 AM a 10:00
+PM; el rango de 10:00 PM a 06:00 AM no es elegible ni visible como disponible; sin
+pagos, notificaciones externas ni panel de administracion; errores tecnicos nunca llegan
+a la UI.
 
 **Scale/Scope**: MVP local para un club, cinco canchas, usuarios autenticados y una
 reserva activa por usuario; el almacenamiento debe soportar concurrencia de solicitudes
