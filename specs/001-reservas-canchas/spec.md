@@ -14,6 +14,10 @@
 
 - Q: ¿Qué zona horaria debe usar el sistema para determinar si una fecha u horario ya pasó? → A: `America/Bogota`, la zona horaria del club.
 
+### Session 2026-09-15
+
+- Q: ¿Qué rango horario debe mostrarse como disponible en la grilla? → A: Solo se muestran horarios disponibles entre las 07:00 AM y las 10:00 PM; el rango de 10:00 PM a 06:00 AM nunca aparece disponible.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Crear cuenta e iniciar sesion (Priority: P1)
@@ -124,6 +128,8 @@ identifica cancha, fecha y hora, y cancela una reserva futura confirmando la acc
   mensaje comprensible.
 - Si la fecha seleccionada no tiene reservas, todos sus bloques futuros deben mostrarse
   como disponibles y los bloques pasados deben permanecer no reservables.
+- La grilla solo expone horarios disponibles entre las 07:00 AM y las 10:00 PM; el
+  rango de 10:00 PM a 06:00 AM no aparece disponible y no puede reservarse.
 - La frontera del horario actual debe evaluarse con la zona horaria del club: un bloque
   que ya inicio no puede reservarse.
 - Si una reserva se cancela mientras otro usuario observa la grilla, la siguiente
@@ -149,7 +155,9 @@ identifica cancha, fecha y hora, y cancela una reserva futura confirmando la acc
 - **FR-006**: System MUST permitir seleccionar una fecha mediante un calendario y una
   cancha del catalogo.
 - **FR-007**: System MUST mostrar para la fecha y cancha seleccionadas los bloques de
-  una hora en formato de 24 horas y su estado Disponible o Reservado.
+  una hora en formato de 24 horas y su estado Disponible o Reservado, restringiendo la
+  grilla a horarios entre las 07:00 AM y las 10:00 PM; el rango de 10:00 PM a 06:00
+  AM no debe aparecer disponible.
 - **FR-008**: System MUST permitir confirmar una reserva solo para un bloque futuro,
   entero y disponible.
 - **FR-009**: System MUST revalidar la disponibilidad inmediatamente antes de crear una
@@ -212,5 +220,7 @@ identifica cancha, fecha y hora, y cancela una reserva futura confirmando la acc
 - Las reservas se gestionan en bloques de una hora; una solicitud de dos horas requiere
   dos reservas independientes y queda fuera del flujo de un solo clic.
 - La lista de canchas y sus nombres es fija durante esta iteracion.
+- La grilla de disponibilidad de reservas cubre exclusivamente el rango de 07:00 AM a
+  10:00 PM; fuera de ese horario, no se ofrece disponibilidad.
 - El pago presencial y cualquier comunicacion externa al sistema quedan fuera del
   alcance de esta feature.
