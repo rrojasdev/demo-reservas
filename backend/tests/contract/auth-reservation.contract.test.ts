@@ -1,15 +1,16 @@
 import request from 'supertest';
 import { afterEach, describe, expect, it } from 'vitest';
-import { createDatabase } from '../../src/db/database.js';
-import { createApp } from '../../src/http/app.js';
 import type { SqliteDatabase } from '../../src/db/database.js';
+import { closeTestDatabase } from '../test-database.js';
+import { createTestServer } from '../test-server.js';
 
 let database: SqliteDatabase;
-afterEach(() => database?.close());
+afterEach(() => closeTestDatabase(database));
 
 function createTestApp() {
-  database = createDatabase(':memory:');
-  return createApp(database);
+  const testServer = createTestServer();
+  database = testServer.database;
+  return testServer.app;
 }
 
 describe('authentication and reservation contracts', () => {

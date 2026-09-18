@@ -50,8 +50,17 @@ export function App() {
   }, [courtId, date, user, view]);
   useEffect(() => {
     if (!user || view !== 'mine') return;
-    void api<{ future: Reservation[]; history: Reservation[] }>('/api/reservations/me').then(setReservations).catch((cause: Error) => setError(cause.message));
+    void loadReservations();
   }, [user, view]);
+
+  async function loadReservations() {
+    try {
+      const result = await api<{ future: Reservation[]; history: Reservation[] }>('/api/reservations/me');
+      setReservations(result);
+    } catch (cause) {
+      setError((cause as Error).message);
+    }
+  }
 
   async function submitAuth(event: React.FormEvent) {
     event.preventDefault(); setError('');
@@ -72,7 +81,7 @@ export function App() {
 
   async function cancel(id: number) {
     setError('');
-    try { await api(`/api/reservations/${id}/cancel`, { method: 'POST' }); setView('mine'); }
+    try { await api(`/api/reservations/${id}/cancel`, { method: 'POST' }); await loadReservations(); setView('mine'); }
     catch (cause) { setError((cause as Error).message); }
   }
 

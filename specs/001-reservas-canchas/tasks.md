@@ -39,7 +39,7 @@ antes de comenzar cualquier historia.
 - [X] T012 Crear la aplicación Express, registro de rutas `/api` y arranque del servidor en `backend/src/http/app.ts` y `backend/src/server.ts`.
 - [X] T013 Crear tipos compartidos de Usuario, Sesión, Cancha, Reserva y Bloque horario en `backend/src/types/domain.ts` y `frontend/src/types/api.ts`.
 - [X] T014 [P] Crear helpers de validación de correo, contraseñas, fechas y horas enteras en `backend/src/validation/input-validation.ts`.
-- [ ] T015 [P] Crear la configuración de base temporal y utilidades de pruebas en `backend/tests/test-database.ts` y `backend/tests/test-server.ts`.
+- [X] T015 [P] Crear la configuración de base temporal y utilidades de pruebas en `backend/tests/test-database.ts` y `backend/tests/test-server.ts`.
 - [X] T016 [P] Crear el shell de navegación, cliente JSON y traductor de errores amigables en `frontend/src/App.tsx` y `frontend/src/services/api-client.ts`.
 
 **Checkpoint**: Base de datos, aplicación HTTP, sesión, catálogo, validación y UI base
@@ -241,3 +241,13 @@ Task: T036 Reservation repository in backend/src/reservations/reservation-reposi
 - Las historias tienen criterios de prueba independientes y trazabilidad a los requisitos del spec.
 - Las tareas no incluyen pagos, administración de canchas, notificaciones externas,
   reservas multi-hora en un clic ni matchmaking.
+
+## Phase 8: Convergence
+
+**Purpose**: Cerrar las brechas observadas al validar la implementación actual contra
+la especificación y las tareas existentes.
+
+- [X] T056 Diagnosticar y corregir el timeout del contrato existente en `backend/tests/contract/auth-reservation.contract.test.ts`, asegurando que la base temporal y el servidor de pruebas terminen correctamente según US1/Independent Test (partial).
+- [X] T057 [P] Crear utilidades reutilizables de base temporal y servidor de pruebas en `backend/tests/test-database.ts` y `backend/tests/test-server.ts`, y migrar el contrato existente para eliminar dependencia de configuración implícita según plan: estructura de pruebas (missing).
+- [X] T058 [P] Completar pruebas de contrato e integración para autenticación, disponibilidad, creación concurrente, aislamiento, cancelación y errores seguros en `backend/tests/contract/`, `backend/tests/integration/` y `backend/tests/unit/` según FR-001 a FR-015 y SC-003/SC-004/SC-006/SC-008 (missing).
+- [X] T059 [P] Implementar pruebas E2E para los flujos de autenticación, disponibilidad, creación de reservas y cancelación en `frontend/tests/` según US1/Independent Test, US2/Independent Test, US3/Independent Test y US4/Independent Test (missing).
